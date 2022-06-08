@@ -134,11 +134,11 @@ extension AquamanPageViewController: UIScrollViewDelegate {
         if scrollView == mainScrollView {
             mainScrollView.isScrollEnabled = true
             if decelerate == false {
-                contentScrollViewDidEndScroll(contentScrollView)
+                pageController(self, mainScrollViewDidEndScroll: scrollView)
             }
         } else {
             if decelerate == false {
-                pageController(self, mainScrollViewDidEndScroll: scrollView)
+                contentScrollViewDidEndScroll(contentScrollView)
             }
         }
     }
