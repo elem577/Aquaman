@@ -26,7 +26,7 @@
 import Foundation
 import UIKit
 
-protocol AMPageControllerDataSource: class {
+protocol AMPageControllerDataSource: AnyObject {
     
     func pageController(_ pageController: AquamanPageViewController, viewControllerAt index: Int) -> (UIViewController & AquamanChildViewController)
     func numberOfViewControllers(in pageController: AquamanPageViewController) -> Int
@@ -43,7 +43,7 @@ protocol AMPageControllerDataSource: class {
     func originIndexFor(_ pageController: AquamanPageViewController) -> Int
 }
 
-protocol AMPageControllerDelegate: class {
+protocol AMPageControllerDelegate: AnyObject {
     
     /// Any offset changes in pageController's mainScrollView
     ///
@@ -51,6 +51,14 @@ protocol AMPageControllerDelegate: class {
     ///   - pageController: AquamanPageViewController
     ///   - scrollView: mainScrollView
     func pageController(_ pageController: AquamanPageViewController, mainScrollViewDidScroll scrollView: UIScrollView)
+    
+    
+    /// Method call when mainScrollView did end scroll
+    ///
+    /// - Parameters:
+    ///   - pageController: AquamanPageViewController
+    ///   - scrollView: mainScrollView
+    func pageController(_ pageController: AquamanPageViewController, mainScrollViewDidEndScroll scrollView: UIScrollView)
    
     
     /// Method call when contentScrollView did end scroll

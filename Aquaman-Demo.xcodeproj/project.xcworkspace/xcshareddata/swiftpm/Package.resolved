@@ -1,16 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Aquaman",
-        "repositoryURL": "https://github.com/bugkingK/Aquaman",
-        "state": {
-          "branch": null,
-          "revision": "40080956650a1aa783093f11cfb15f781d6ca432",
-          "version": "0.1.2"
-        }
+  "pins" : [
+    {
+      "identity" : "aquaman",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bawn/Aquaman.git",
+      "state" : {
+        "revision" : "2fb802da7a4c3feedd8a41640ef304ed52affcfc",
+        "version" : "0.1.4"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "trident",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bawn/Trident.git",
+      "state" : {
+        "revision" : "2eed75e69815da6fc28b05c91cd642bca1c40610",
+        "version" : "0.7.0"
+      }
+    }
+  ],
+  "version" : 2
 }

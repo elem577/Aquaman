@@ -131,23 +131,31 @@ extension AquamanPageViewController: UIScrollViewDelegate {
 
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView == contentScrollView {
+        if scrollView == mainScrollView {
             mainScrollView.isScrollEnabled = true
             if decelerate == false {
                 contentScrollViewDidEndScroll(contentScrollView)
+            }
+        } else {
+            if decelerate == false {
+                pageController(self, mainScrollViewDidEndScroll: scrollView)
             }
         }
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if scrollView == contentScrollView {
+        if scrollView == mainScrollView {
+            pageController(self, mainScrollViewDidEndScroll: scrollView)
+        } else {
             contentScrollViewDidEndScroll(contentScrollView)
         }
     }
     
     
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        if scrollView == contentScrollView {
+        if scrollView == mainScrollView {
+            pageController(self, mainScrollViewDidEndScroll: scrollView)
+        } else {
             contentScrollViewDidEndScroll(contentScrollView)
         }
     }
